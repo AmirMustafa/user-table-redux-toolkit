@@ -1,14 +1,18 @@
 import React from 'react';
 import DeleteAllUser from './DeleteAllUser';
 import styled from "styled-components";
+import { fakeUserData } from '../api/index.js';
 
 const UserDetails = () => {
+    const AddNewUser = (payload) => {
+        console.log("Add New User", payload);
+    }
   return (
     <Wrapper>
         <div className="content">
             <div className="admin-table">
                 <div className="admin-subtitle">List of User Details</div>
-                <button className="btn add-btn">Add New User</button>
+                <button className="btn add-btn" onClick={() => AddNewUser(fakeUserData())}>Add New User</button>
             </div>
             <ul>
                 <li>Hi</li>
