@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteUsers } from '../store/slices/UserSlice';
+// import { deleteUsers } from '../store/slices/UserSlice';
+import { deleteUsers } from '../store/actions';
 import { MdDeleteForever } from 'react-icons/md';
 
 const DeleteAllUser = () => {
