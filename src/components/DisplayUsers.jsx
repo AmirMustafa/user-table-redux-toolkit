@@ -1,35 +1,42 @@
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { removeUser } from "../store/slices/UserSlice.jsx";
+import { MdDeleteForever } from "react-icons/md";
+import { removeUser } from "../store/slices/UserSlice";
 
 const DisplayUsers = () => {
-  const data = useSelector((state) => { // state = complete state access in src/store/index.jsx
-    return state.users;
-  });
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const data = useSelector((state) => { // state = complete state access in src/store/index.jsx
+        return state.users;
+    });
 
-  return (
-    <Wrapper>
-      <table>
-        <thead>
-          <tr>
-            <th>User Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((user, index) => (
-            <tr key={index}>
-              <td>{user}</td>
-              <td>
-                <button onClick={() => dispatch(removeUser(index))}>Delete</button>
-              </td>
+    const deleteUser = (id) => {
+        dispatch(removeUser(id));
+    }
+
+    return (
+        <Wrapper>
+        <table>
+            <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </Wrapper>
-  )
+            </thead>
+            <tbody>
+            {data.map((user, index) => (
+                <tr key={index}>
+                <td>{user}</td>
+                <td>
+                    <button className=" btn-delete" onClick={() => deleteUser(index)}>
+                        <MdDeleteForever className="delete-icon" />
+                    </button>
+                </td>
+                </tr>
+            ))}
+            </tbody>
+        </table>
+        </Wrapper>
+    )
 }
 
 const Wrapper = styled.section`
@@ -70,7 +77,7 @@ const Wrapper = styled.section`
   }
 
   button {
-    background-color: #f12711;
+    background-color: #f9f9f9;
     color: white;
     border: none;
     padding: 6px 12px;
@@ -81,7 +88,7 @@ const Wrapper = styled.section`
   }
 
   button:hover {
-    background-color: #d11a0a;
+    background-color: #f9f9f9;
   }
 
   @media screen and (max-width: 768px) {
