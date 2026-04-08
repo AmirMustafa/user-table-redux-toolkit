@@ -2,11 +2,13 @@
 
 Practice project for Redux Toolkit
 
-<img width="1920" height="1022" alt="Screenshot 2026-04-07 at 1 41 24 PM" src="https://github.com/user-attachments/assets/fa206453-f40a-4ea5-94fd-7b5cd9d04d93" />
-<img width="1920" height="1080" alt="Screenshot 2026-04-07 at 1 41 31 PM" src="https://github.com/user-attachments/assets/f5355a29-3d18-4374-8799-c08328b3bbea" />
-<img width="1920" height="1080" alt="Screenshot 2026-04-07 at 1 41 48 PM" src="https://github.com/user-attachments/assets/7f9c4664-58c7-4893-a03c-2c06ce25a926" />
-<img width="1920" height="1080" alt="Screenshot 2026-04-07 at 1 43 47 PM" src="https://github.com/user-attachments/assets/ddf4375d-993e-491d-b9f6-f5675d859c5c" />
-<img width="1920" height="1080" alt="Screenshot 2026-04-07 at 1 45 29 PM" src="https://github.com/user-attachments/assets/e0c8a30e-9ef2-418c-a72d-53fc6449ddc0" />
+<img width="1920" height="1025" alt="Image" src="https://github.com/user-attachments/assets/e03a1845-748f-49a6-8588-a7c4c46e7cfc" />
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/6802b533-c65e-4e87-9bb6-4fcf84ce27b1" />
+
+<img width="1918" height="1037" alt="Image" src="https://github.com/user-attachments/assets/30b717b5-bc0b-490e-9609-e4a033b56ea9" />
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/66ab7ab4-bc76-4ca2-aa73-185ff8887f6e" />
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
