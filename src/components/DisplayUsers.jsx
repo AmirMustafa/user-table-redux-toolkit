@@ -1,66 +1,93 @@
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeUser } from "../store/slices/UserSlice.jsx";
 
 const DisplayUsers = () => {
   const data = useSelector((state) => { // state = complete state access in src/store/index.jsx
     return state.users;
   });
+  const dispatch = useDispatch();
 
   return (
     <Wrapper>
-      {
-        data.map((user, id) => {
-            return <li key={id}>{user}</li>
-        })
-      }
+      <table>
+        <thead>
+          <tr>
+            <th>User Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((user, index) => (
+            <tr key={index}>
+              <td>{user}</td>
+              <td>
+                <button onClick={() => dispatch(removeUser(index))}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.section`
-  nav {
-    margin: 3rem 0;
-    background: #f9f9f9;
-    padding: 1rem 0;
-  }
-  nav .menuItems {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  nav .menuItems li {
-    margin: 1.6rem 5rem;
-  }
-  nav .menuItems li a {
-    text-decoration: none;
-    color: #8f8f8f;
-    font-size: 24px;
-    font-weight: 400;
-    transition: all 0.5s ease-in-out;
-    position: relative;
-    text-transform: uppercase;
-  }
-  nav .menuItems li a::before {
-    content: attr(data-item);
-    transition: 0.5s;
-    color: #8254ff;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 0;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     overflow: hidden;
   }
-  nav .menuItems li a:hover::before {
-    width: 100%;
-    transition: all 0.5s ease-in-out;
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    text-align: left;
   }
 
-  @media screen and (max-width: 998px) {
-    nav .menuItems li {
-      margin: 0.6rem 5rem;
+  th {
+    background-color: #8254ff;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  td {
+    font-size: 16px;
+    color: #333;
+  }
+
+  button {
+    background-color: #f12711;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #d11a0a;
+  }
+
+  @media screen and (max-width: 768px) {
+    th, td {
+      padding: 8px 12px;
+      font-size: 14px;
     }
   }
 `;

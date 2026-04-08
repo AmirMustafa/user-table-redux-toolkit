@@ -19,9 +19,7 @@ const UserDetails = () => {
                 <div className="admin-subtitle">List of User Details</div>
                 <button className="btn add-btn" onClick={() => AddNewUser(fakeUserData())}>Add New User</button>
             </div>
-            <ul>
-                <DisplayUsers />
-            </ul>
+            <DisplayUsers />
             <hr />
             <DeleteAllUser />
         </div>
